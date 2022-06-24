@@ -190,7 +190,7 @@ public class RollingFileAppenderBuilder extends AbstractBuilder implements Appen
             LOGGER.warn("Unable to create File Appender, no file name provided");
             return null;
         }
-        String filePattern = fileName +"%d{yyy-MM-dd}";
+        String filePattern = fileName +"%i";
         TriggeringPolicy timePolicy = TimeBasedTriggeringPolicy.newBuilder().withModulate(true).build();
         SizeBasedTriggeringPolicy sizePolicy = SizeBasedTriggeringPolicy.createPolicy(maxSize);
         CompositeTriggeringPolicy policy = CompositeTriggeringPolicy.createPolicy(sizePolicy, timePolicy);
