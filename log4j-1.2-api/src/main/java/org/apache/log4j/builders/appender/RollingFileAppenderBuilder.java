@@ -190,7 +190,7 @@ public class RollingFileAppenderBuilder extends AbstractBuilder implements Appen
             LOGGER.warn("Unable to create File Appender, no file name provided");
             return null;
         }
-        String filePattern = fileName +"%i";
+        String filePattern = fileName + ".%i";
         SizeBasedTriggeringPolicy sizePolicy = SizeBasedTriggeringPolicy.createPolicy(maxSize);
         CompositeTriggeringPolicy policy = CompositeTriggeringPolicy.createPolicy(sizePolicy);
         RolloverStrategy strategy = DefaultRolloverStrategy.newBuilder()
